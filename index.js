@@ -1002,19 +1002,19 @@ switch(command) {
 					if (!isGroupAdmins) return reply(ind.admin())
 					if (args.length < 1) return reply('Ekhemm >_<')
 					if (Number(args[0]) === 1) {
-						if (isWelkom) return reply('*FITUR WELCOME SUDAH AKTIF KAK*')
+						if (isWelkom) return reply('*WELCOME*')
 						welkom.push(from)
 						fs.writeFileSync('./database/group/welkom.json', JSON.stringify(welkom))
-						reply('*⟪ SUKSES ⟫ MENGAKTIFKAN FITUR WELCOME/LEAVE DI GROUP*')
+						reply('*⟪ SUCCESS ⟫ ACTIVE*')
 					} else if (Number(args[0]) === 0) {
 						welkom.splice(from, 1)
 						fs.writeFileSync('./database/group/welkom.json', JSON.stringify(welkom))
-						reply('*⟪ SUKSES ⟫ MEMATIKAN FITUR WELCOME/LEAVE DI GROUP*')
+						reply('*⟪ SUCCESS ⟫ HUH*')
 					} else {
 						reply(ind.satukos())
 					}
 					break
-                 case 'event':
+                 case 'eve':
                   if (isBanned) return reply(ind.baned())                 
 					if (!isGroup) return reply(ind.groupo())
 					if (!isOwner) return reply(ind.ownerb())
@@ -1032,7 +1032,7 @@ switch(command) {
 						reply(ind.satukos())
 					}
 					break
-                case 'leveling':
+                case 'leveing':
                 if (!isGroup) return reply(ind.groupo())
                 if (!isGroupAdmins) return reply(ind.admin())
                 if (args.length < 1) return reply('Ekhemm >_<')
@@ -1049,7 +1049,7 @@ switch(command) {
                     reply(ind.satukos())
                 }
 					break
-				case 'simih':
+				case 'smih':
                   if (isBanned) return reply(ind.baned())				
 					if (!isGroup) return reply(ind.groupo())
 					if (!isGroupAdmins) return reply(ind.admin())
@@ -1073,14 +1073,14 @@ switch(command) {
 					if (!isGroupAdmins) return reply(ind.admin())
 					if (args.length < 1) return reply('Ekhem >_<')
 					if (Number(args[0]) === 1) {
-						if (isNsfw) return reply(' *sudah aktif*  !!')
+						if (isNsfw) return reply(' *ALREADY ACTIVE*  !!')
 						nsfw.push(from)
 						fs.writeFileSync('./database/group/nsfw.json', JSON.stringify(nsfw))
-						reply('*⟪ SUKSES ⟫ MENGAKTIFKAN FITUR NSFW DI GROUP*')
+						reply('*⟪ SUCESS ⟫ ACTIVATED*')
 					} else if (Number(args[0]) === 0) {
 						nsfw.splice(from, 1)
 						fs.writeFileSync('./database/group/nsfw.json', JSON.stringify(nsfw))
-						reply('*⟪ SUKSES ⟫ MEMATIKAN FITUR NSWF DI GROUP*')
+						reply('*⟪ SUCESS ⟫ ACTIVE*')
 					} else {
 						reply(ind.satukos())
 					}
@@ -1091,7 +1091,7 @@ switch(command) {
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))				
 					if (!isGroup) return reply(ind.groupo())
-					teks = `*DAFTAR ATASAN GROUP* _${groupMetadata.subject}_\n*TOTAL* : ${groupAdmins.length}\n\n`
+					teks = `*LIST OF GROUP TOP* _${groupMetadata.subject}_\n*TOTAL* : ${groupAdmins.length}\n\n`
 					no = 0
 					for (let admon of groupAdmins) {
 						no += 1
@@ -1105,11 +1105,11 @@ switch(command) {
 					if (!isGroup) return reply(ind.groupo())
 					if (!isGroupAdmins) return reply(ind.admin())
 					if (!isBotGroupAdmins) return reply(ind.badmin())
-					if (args[0] === 'buka') {
-					    reply(`*BERHASIL MEMBUKA GROUP*`)
+					if (args[0] === 'open') {
+					    reply(`*SUCCESSFUL OPENING THE GROUP*`)
 						client.groupSettingChange(from, GroupSettingChange.messageSend, false)
-					} else if (args[0] === 'tutup') {
-						reply(`*BERHASIL MENUTUP GROUP*`)
+					} else if (args[0] === 'close') {
+						reply(`*SUCCESS open  GROUP*`)
 						client.groupSettingChange(from, GroupSettingChange.messageSend, true)
 					}
 					break
@@ -1120,14 +1120,14 @@ switch(command) {
 					if (!isGroup) return reply(ind.groupo())
 					if (!isGroupAdmins) return reply(ind.admin())
 					if (!isBotGroupAdmins) return reply(ind.badmin())
-					if (args.length < 1) return reply('Yang mau di add bapakau kah? -_-')
-					if (args[0].startsWith('08')) return reply('Gunakan kode bahasa kak')
+					if (args.length < 1) return reply('What do you want to add, sir? -_-')
+					if (args[0].startsWith('08')) return reply('Use the language code mwone')
 					try {
 						num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
 						client.groupAdd(from, [num])
 					} catch (e) {
 						console.log('Error :', e)
-						reply('Anjim yang mau di add di private, dahlah :)')
+						reply(' who wants to be added in private, thats fine :)')
 					}
 					break
 			     	case 'kick':
@@ -1142,13 +1142,13 @@ switch(command) {
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `Bismillah atas izin admin grup kamu akan saya tendang 🏃 :\n`
+							teks += `I will kick your group admin with permission 🏃 :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
-						mentions(`Bismillah atas izin admin grup kamu akan saya tendang @${mentioned[0].split('@')[0]} 🏃`, mentioned, true)
+						mentions(`I will kick your group admin with permission@${mentioned[0].split('@')[0]} 🏃`, mentioned, true)
 						client.groupRemove(from, mentioned)
 					}
 					break
@@ -1174,7 +1174,7 @@ switch(command) {
 					client.sendMessage(from, options, text)
 					await limitAdd(sender)
 					break
-                case 'level':
+                case 'leel':
                   if (isBanned) return reply(ind.baned())                
                 if (!isRegistered) return reply(ind.noregis())
                 if (!isLevelingOn) return reply(ind.lvlnoon())
@@ -1190,7 +1190,7 @@ switch(command) {
                         await reply(`Error!\n${err}`)
                     })
 					break
-                 case 'linkgrup':
+                 case 'linkgrp':
                   if (isBanned) return reply(ind.baned())
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))                
@@ -1223,7 +1223,7 @@ switch(command) {
 			    if (!isGroupAdmins) return reply(ind.admin())
 				if (!isBotGroupAdmins) return reply(ind.badmin())
                 client.groupUpdateSubject(from, `${body.slice(9)}`)
-                client.sendMessage(from, '⟪ SUKSES ⟫ Mengubah Nama Grup', text, {quoted: mek})
+                client.sendMessage(from, '⟪ SUCCESS ⟫ NAME CHANGE ', text, {quoted: mek})
 					break
                 case 'setdesc':
                 if (!isRegistered) return reply(ind.noregis())                
@@ -1231,7 +1231,7 @@ switch(command) {
 			    if (!isGroupAdmins) return reply(ind.admin())
 				if (!isBotGroupAdmins) return reply(ind.badmin())
                 client.groupUpdateDescription(from, `${body.slice(9)}`)
-                client.sendMessage(from, '⟪ SUKSES ⟫ Mengubah Desk Grup', text, {quoted: mek})
+                client.sendMessage(from, '⟪ SUCCESS ⟫YEP', text, {quoted: mek})
 					break
            case 'demote':
                 if (!isRegistered) return reply(ind.noregis())           
@@ -1243,13 +1243,13 @@ switch(command) {
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `*jabatan kamu di copot*🏃 :\n`
+							teks += `*Ninte admin poyallo mwone*🏃 :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						client.groupDemoteAdmin(from, mentioned)
 					} else {
-						mentions(`Yahh @${mentioned[0].split('@')[0]} Jabatan kamu sebagai leluhur di grup telah di copot🏃`, mentioned, true)
+						mentions(`Yahh @${mentioned[0].split('@')[0]} Your position as an ancestor in the group has been removed🏃`, mentioned, true)
 						client.groupDemoteAdmin(from, mentioned)
 					}
 					break
@@ -1263,13 +1263,13 @@ switch(command) {
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `Yeee🥳 Kamu naik jabatan >_< :\n`
+							teks += `Yeee🥳 Youre an admin chugick >_< :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					} else {
-						mentions(`Selamat🥳 @${mentioned[0].split('@')[0]} *anda naik menjadi admin group* >_<`, mentioned, true)
+						mentions(`congrats🥳 @${mentioned[0].split('@')[0]} *uff mwonu is an admin chugick* >_<`, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					}
 					break
@@ -1281,14 +1281,14 @@ switch(command) {
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di jadi admin!')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
-						teks = 'Perintah di terima, hapus pesan :\n'
+						teks = 'Command received, delete message :\n'
 						for (let _ of mentioned) {
 							teks += `@${_.split('@')[0]}\n`
 						}
 						mentions(teks, mentioned, true)
 						client.deleteMessage(from, mentioned)
 					} else {
-						mentions(`Perintah di terima, hapus pesan : @${mentioned[0].split('@')[0]}`, mentioned, true)
+						mentions(`Command received, delete message : @${mentioned[0].split('@')[0]}`, mentioned, true)
 						client.deleteMessage(from, mentioned)
 					}
 					break
@@ -1300,7 +1300,7 @@ switch(command) {
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di tendang!')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
-						teks = 'Bismillah Hedsot >_< :\n'
+						teks = 'wow Hedsot >_< :\n'
 						for (let _ of mentioned) {
 							teks += `@${_.split('@')[0]}\n`
 						}
@@ -1309,7 +1309,7 @@ switch(command) {
 						mentions(teks, mentioned, true)
 						client.groupAdd(from, [num])
 					} else {
-						mentions(`Berhasil Meng hedsot pala nya  : @${mentioned[0].split('@')[0]}`, mentioned, true)
+						mentions(`Successfully sucked  : @${mentioned[0].split('@')[0]}`, mentioned, true)
 						client.groupRemove(from, mentioned)
 						}
 					break
@@ -1361,7 +1361,7 @@ switch(command) {
                       client.updatePresence(from, Presence.composing) 
                       if (!isRegistered) return reply(ind.noregis())
                       if (isBanned) return reply(ind.baned())   
-                      client.sendMessage(from, 'Aku pamit kak:)', text)
+                      client.sendMessage(from, 'eda mwone sangadam ayi ketto ok bei:)', text)
                       }, 0)
                       break																									
 /*
@@ -1372,28 +1372,17 @@ switch(command) {
                   if (isBanned) return reply(ind.baned())
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('URL NYA TIDAK VALID KAK')				
+					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('URL NOT VALID')				
 		anu = await fetchJson(`https://api.vhtear.com/ytdl?link=${args[0]}&apikey=${VhtearKey}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					teks = `*➸ JUDUL* : ${anu.result.title}\n\n*[WAIT] Proses Dumlu Yakan*`
+					teks = `*➸Wow* : ${anu.result.title}\n\n*[WAIT] Processing*`
 					thumb = await getBuffer(anu.result.imgUrl)
 					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
 					buffer = await getBuffer(anu.result.UrlVideo)
 					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', quoted: mek})
                     await limitAdd(sender)
 					break
-				case 'tiktod':
-					if (args.length < 1) return reply('Urlnya mana um?')
-                  if (isBanned) return reply(ind.baned())
-				if (!isRegistered) return reply(ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('URL NYA TIDAK VALID KAK')
-					anu = await fetchJson(`https://api.vhtear.com/tiktokdl?link=${args[0]}&apikey=${VhtearKey}`,)
-					reply('[WAIT] Proses Dumlu Yakan')
-					buffer = await getBuffer(anu.result.video)
-					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', quoted: mek})
-                    await limitAdd(sender)
-					break
+				
                      case 'play':
                   if (isBanned) return reply(ind.baned())
 				if (!isRegistered) return reply(ind.noregis())
