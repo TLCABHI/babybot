@@ -646,7 +646,7 @@ switch(command) {
 				ramlan = body.slice(8)
 				reply('「❗」WAIT BRO')
 				buff = await getBuffer(`https://api.xteam.xyz/magernulis2?text=${ramlan}&APIKEY=${XteamKey}`)
-				client.sendMessage(from, buff, image, {quoted: mek, caption: 'Better to write it yourself, sis :*'})
+				client.sendMessage(from, buff, image, {quoted: mek, caption: 'Better to write it yourself, bro :*'})
 				await limitAdd(sender)
 				break
 				case 'nulis2':
@@ -656,19 +656,19 @@ switch(command) {
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
 				if (args.length < 1) return reply(`Teksnya mana kak? Contoh : ${prefix}nulis2 Ramlan baik hati`)
 				laysha = body.slice(8)
-				reply('「❗」WAIT BRO GUE NULIS DUMLU YAKAN')
+				reply('「❗」WAIT BRO')
 				buff = await getBuffer(`https://api.xteam.xyz/magernulis3?text=${laysha}&APIKEY=${XteamKey}`)
-				client.sendMessage(from, buff, image, {quoted: mek, caption: 'Lebih baik nulis sendiri ya kak :*'})
+				client.sendMessage(from, buff, image, {quoted: mek, caption: 'Better to write it yourself, bro :*'})
 				await limitAdd(sender)
 				break
 				case 'nulis':
 				case 'tulis':
-					if (args.length < 1) return reply('Yang mau di tulis titit kah?')
+					if (args.length < 1) return reply('What do you want to write down??')
 				if (isBanned) return reply(ind.baned())
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
 					teks = body.slice(7)
-					reply('「❗」WAIT BRO GUE NULIS DUMLU YAKAN')
+					reply('「❗」WAIT BRO')
 					buff = await getBuffer(`https://api.vhtear.com/write?text=${teks}&apikey=${VhtearKey}`)
 					client.sendMessage(from, buff, image, {quoted: mek})
                                         await limitAdd(sender)
