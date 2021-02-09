@@ -1,16 +1,16 @@
 const download = (pushname, prefix, botName, ownerName, getLevelingLevel, sender, _registered) => {
 	return `🔰 -----[ *DOWNLOAD MENU* ]----- 🔰
 Hallo, ${pushname} 👋
-Semoga harimu Menyenangkan User, ${sender.split("@")[0]}
+Have a nice day for users, ${sender.split("@")[0]}
 ┏━━━━━━━━━━━━━━━━━━━━┓
 ┃╭───────────────────
-┃│➸ NAMA : ${pushname}
+┃│➸ NAME : ${pushname}
 ┃│➸ LEVEL : ${getLevelingLevel(sender)}
 ┃│➸ USER ${botName} : ${_registered.length}
 ┃╰───────────────────
 ┗━━━━━━━━━━━━━━━━━━━━┛
-Berikut adalah fitur yang ada pada bot ini!✨
-Jika tidak paham ketik *${prefix}bingungcok*
+THESE ARE THE FEATURES OF THE BOT!✨
+If you don't understand, type *${prefix}confused*
 ┏━━━━━━━━━━━━━━━━━━━━┓
 ┃╭───────────────────
 ┃│➸ *${prefix}play*
