@@ -37,24 +37,27 @@ const ffmpeg = require('fluent-ffmpeg')
 const cd = 4.32e+7
 const { removeBackgroundFromImageFile } = require('remove.bg')
 const { ind } = require('./language')
-const vcard = 'BEGIN:VCARD\n' // KASIH WM GUE
-            + 'VERSION:3.0\n' // RAMLAN ID
-            + 'FN:RAMLAN ID\n' // JAN NGEYEL AJG
+const vcard = 'BEGIN:VCARD\n' 
+// KASIH WM GUE
+            + 'VERSION:3.0\n' 
+// RAMLAN ID
+            + 'FN:RAMLAN ID\n' 
+// JAN NGEYEL AJG
             + 'ORG:OWNER BOTZ;\n'
             + 'TEL;type=CELL;type=VOICE;waid=6285559240360:+62 855-5924-0360\n' 
             + 'END:VCARD' 
-prefix = '!'
+prefix = '.'
 blocked = []   
-limitawal = 20
+limitawal = 90000
 memberlimit = 2
 cr = '*𝐁𝐀𝐁𝐘 𝐁𝐎𝐓𝐙 𝐕𝐄𝐑𝐈𝐅𝐈𝐄𝐃*'
 
 /*
 ]=====> SETTINGS <=====[
 */
-const ownerNumber = ["6285559240360@s.whatsapp.net","6285559240360@s.whatsapp.net"]
-const botName = '𝐁𝐀𝐁𝐘 𝐁𝐎𝐓𝐙'
-const ownerName = '𝗥𝗮𝗺𝗹𝗮𝗻 𝗜𝗗'
+const ownerNumber = ["919074329903@s.whatsapp.net","919074329903@s.whatsapp.net"]
+const botName = 'LUNA MWOL 2.0'
+const ownerName = 'ABHI SER'
 const BarBarKey = 'IDxO1TFYnKADlX4pxcHa' // APIKEY DOWNLOAD FILE
 const VhtearKey = 'PUNYARAMLAN' // YANG DI YOUTUBE
 const TobzKey = 'BotWeA' // JANGAN MAU ENAK DOANG
@@ -86,7 +89,8 @@ const { gabut } = require('./database/menu/gabut')
 const { groupm } = require('./database/menu/group')
 const { download } = require('./database/menu/download')
 const { dompet } = require('./database/menu/dompet')
-const { random } = require('./database/menu/random')
+
+const { random } = require('./database/menu/random')
 const { other } = require('./database/menu/other')
 const { owb } = require('./database/menu/owb')
 const { maker } = require('./database/menu/maker')
@@ -396,7 +400,8 @@ client.on('group-participants-update', async (anu) => {
 			}
 		    const sendPtt = (teks) => {
 		    client.sendMessage(from, audio, mp3, {quoted:mek})
-		    }			
+		    }
+			
 /*
 ]=====> LEVELING <=====[
 */
@@ -629,7 +634,7 @@ switch(command) {
 							.toFormat('webp')
 							.save(ran)
 							} else {
-						reply(`Kirim gambar/video/gif dengan caption \n${prefix}sticker (durasi sticker video 1-9 detik)`)
+						reply(`Send pictures / videos / gifs with caption \n${prefix}sticker (duration of the video sticker 1-6 sec)`)
 					}
 					break
 				case 'nulis1':
@@ -637,11 +642,11 @@ switch(command) {
 				if (isBanned) return reply(ind.baned())
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
-				if (args.length < 1) return reply(`Teksnya mana kak? Contoh : ${prefix}nulis1 Ramlan baik hati`)
+				if (args.length < 1) return reply(`Where is the text, brother? Example : ${prefix}nulis1 abhi good heart`)
 				ramlan = body.slice(8)
-				reply('「❗」WAIT BRO GUE NULIS DUMLU YAKAN')
+				reply('「❗」WAIT BRO')
 				buff = await getBuffer(`https://api.xteam.xyz/magernulis2?text=${ramlan}&APIKEY=${XteamKey}`)
-				client.sendMessage(from, buff, image, {quoted: mek, caption: 'Lebih baik nulis sendiri ya kak :*'})
+				client.sendMessage(from, buff, image, {quoted: mek, caption: 'Better to write it yourself, sis :*'})
 				await limitAdd(sender)
 				break
 				case 'nulis2':
