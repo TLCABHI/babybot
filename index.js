@@ -825,18 +825,7 @@ switch(command) {
 					
 					
 
-                   case 'stalkig':
-                   if (isBanned) return reply(ind.baned())
-                   if (!isRegistered) return reply(ind.noregis())
-                   if (isLimit(sender)) return reply(ind.limitend(pusname))
-                     teks = body.slice(9)
-                     anu = await fetchJson(`https://api.vhtear.com/igprofile?query=${teks}&apikey=${VhtearKey}`, {method: 'get'})
-                     reply('「❗」Patience Again, its IG Stalking bro')
-                     buffer = await getBuffer(anu.result.picture)
-                     hasil = `YAHAHA HAS BEEN IN MY BOS STALK FOR USERNAME ${teks} \n\n *Username?* : _${anu.result.username}_ \n *Name??* : _${anu.result.full_name}_ \n *Number of Followers??﹦?* : _${anu.result.follower}_ \n *number of Following?* : _${anu.result.follow}_ \n *total Post?* : _${anu.result.post_count}_ \n *Biography?? :* _${anu.result.biography}`
-                    client.sendMessage(from, buffer, image, {quoted: , caption: results})
-                    await limitAdd(sender)
-			       break
+		
 				case 'register':
 				if (isBanned) return reply(ind.baned())
                 if (isRegistered) return  reply(ind.rediregis())
