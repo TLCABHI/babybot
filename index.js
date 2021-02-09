@@ -1368,7 +1368,7 @@ switch(command) {
 ]=====> DOWNLOAD MENU <=====[
 */
 				case 'yutubdl':
-					if (args.length < 1) return reply('Urlnya mana um?')
+					if (args.length < 1) return reply('Wheres the url um?')
                   if (isBanned) return reply(ind.baned())
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
@@ -1390,7 +1390,7 @@ switch(command) {
                 reply(ind.wait())
                 anu = await fetchJson(`https://api.vhtear.com/ytmp3?query=${body.slice(6)}&apikey=${VhtearKey}`)
                if (anu.error) return reply(anu.error)
-                 infomp3 = `*「❗」Lagu Ditemukan*\n➸ Judul : ${anu.result.title}\n➸ Durasi : ${anu.result.duration}\n➸ Size : ${anu.result.size}\n\n*[WAIT] Proses Dumlu Yakan*`
+                 infomp3 = `*「❗」Song Found*\n➸ Song  : ${anu.result.title}\n➸ Duration : ${anu.result.duration}\n➸ Size : ${anu.result.size}\n\n*[WAIT] Processing wait mwonu*`
                 buffer = await getBuffer(anu.result.image)
                 lagu = await getBuffer(anu.result.mp3)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
@@ -1399,12 +1399,13 @@ switch(command) {
 /*
 ]=====> LIMIT MENU <=====[
 */
-				case 'limit':
+				case 'limi':
 				                  if (isBanned) return reply(ind.baned())
 				   if (!isRegistered) return reply(ind.noregis())
 				   checkLimit(sender)
 					break
-				case 'transfer':
+				case 'tran':
+		
                   if (isBanned) return reply(ind.baned())				
 				if (!isRegistered) return reply(ind.noregis())
 				if (!q.includes('|')) return  reply(ind.wrongf())
@@ -1568,7 +1569,7 @@ switch(command) {
                  randIndex = Math.floor(Math.random() * jsonData.length);
                  randKey = jsonData[randIndex];
                 hasil = await getBuffer(randKey.result)
-                sendImage(hasil, mek, '*GELAP BOS :V*')
+                sendImage(hasil, mek, '*DARK BOS :V*')
 				break										
 /*
 ]=====> OTHER MENU <=====[
@@ -1576,7 +1577,7 @@ switch(command) {
             	case 'mining':
                       if (!isRegistered) return reply(ind.noregis())
                       if (isLimit(sender)) return reply(ind.limitend(pushname))
-                      if (!isEventon) return reply(`maaf ${pushname} event mining tidak di aktifkan sama owner Ramlan`)
+                      if (!isEventon) return reply(`sorry ${pushname} event mining ONLY FOR MASTER ABHI`)
                       if (isOwner) {
                       const one = 999999999
                       addLevelingXp(sender, one)
@@ -1595,7 +1596,9 @@ switch(command) {
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
 			data = await fetchJson(`https://tobz-api.herokuapp.com/api/moddroid?q=${body.slice(10)}&apikey=${TobzKey}`)
 			hepi = data.result[0] 
-			teks = `*➸ Nama*: ${data.result[0].title}\n*➸ publisher*: ${hepi.publisher}\n*➸ mod info:* ${hepi.mod_info}\n*➸ size*: ${hepi.size}\n*➸ latest version*: ${hepi.latest_version}\n*➸ genre*: ${hepi.genre}\n*➸ link:* ${hepi.link}\n*➸ download*: ${hepi.download}`
+			teks = `*➸ Name
+
+*: ${data.result[0].title}\n*➸ publisher*: ${hepi.publisher}\n*➸ mod info:* ${hepi.mod_info}\n*➸ size*: ${hepi.size}\n*➸ latest version*: ${hepi.latest_version}\n*➸ genre*: ${hepi.genre}\n*➸ link:* ${hepi.link}\n*➸ download*: ${hepi.download}`
 			buffer = await getBuffer(hepi.image)
 			client.sendMessage(from, buffer, image, {quoted: mek, caption: `${teks}`})
 			await limitAdd(sender)
@@ -1653,7 +1656,7 @@ switch(command) {
 					data = await fetchJson(`https://docs-jojo.herokuapp.com/api/infohoax`, {method: 'get'})
 					teks = '♡───────────♡\n'
 					for (let i of data.result) {
-						teks += `*➸ Gambar* : ${i.image}\n*➸ Title* : ${i.title}\n*➸ link* : ${i.link}\n*➸ tag* : ${i.tag}\n♡───────────♡\n`
+						teks += `*➸ picture* : ${i.image}\n*➸ Title* : ${i.title}\n*➸ link* : ${i.link}\n*➸ tag* : ${i.tag}\n♡───────────♡\n`
 					}
 					reply(teks.trim())
 					await limitAdd(sender)
@@ -1666,7 +1669,7 @@ switch(command) {
 					brainly(`${brien}`).then(res => {
 					teks = '♡───────────♡\n'
 					for (let Y of res.data) {
-						teks += `\n*「 BRAINLY 」*\n\n*➸ Pertanyaan:* ${Y.pertanyaan}\n\n*➸ Jawaban:* ${Y.jawaban[0].text}\n♡───────────♡\n`
+						teks += `\n*「 BRAINLY 」*\n\n*➸ Question: * $ {Y. Question} \ n \ n * ➸ Answer: * $ {Y. Answer [0].text}\n♡───────────♡\n`
 					}
 					client.sendMessage(from, teks, text, {quoted: mek, detectLinks: false})
                         console.log(res)
@@ -1693,34 +1696,34 @@ switch(command) {
                   if (isBanned) return reply(ind.baned())
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isGroup) return  reply( 'TIDAK BISA DI GRUP KAK')
+                if (isGroup) return  reply( 'CANNOT BE IN THE KAK GROUP')
                 anug = getRegisteredRandomId(_registered).replace('@s.whatsapp.net','')
-                await reply('Mencari Pasangan >_<')
+                await reply('Find a partner >_<')
                 await reply(`wa.me/${anug}`)
-                await reply( `Pasangan Ditemukan: 🐊\n*${prefix}next* — Temukan Pasangan Baru`)
+                await reply( `Pair Found: 🐊\n*${prefix}next* — Find a New Match`)
             break
             case 'next':
                   if (isBanned) return reply(ind.baned())
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isGroup) return  reply( 'TIDAK BISA DI GRUP KAK')
+                if (isGroup) return  reply( 'CANNOT BE IN THE KAK GROUP')
                 anug = getRegisteredRandomId(_registered).replace('@s.whatsapp.net','')
-                await reply('Mencari Pasangan >_<')
+                await reply('Find a partner >_<')
                 await reply(`wa.me/${anug}`)
-                await reply( `Pasangan Ditemukan: 🐊\n*${prefix}next* — Temukan Pasangan Baru`)
+                await reply( `Pair Found: 🐊\n*${prefix}next* — Find a New Match`)
                 break
 				case 'info':
 					me = client.user
 					uptime = process.uptime()
-					teks = `*➸ Nama bot* : ${me.name}\n*➸ OWNER* : 𝗥𝗮𝗺𝗹𝗮𝗻 𝗜𝗗\n*➸ AUTHOR* : ${ownerName}\n*➸ Nomor Bot* : @${me.jid.split('@')[0]}\n*➸ Prefix* : ${prefix}\n*➸ Total Block Contact* : ${blocked.length}\n*➸ The bot is active on* : ${kyun(uptime)}`
+					teks = `*➸ Name bot* : ${me.name}\n*➸ OWNER* : MR ABHI\n*➸ AUTHOR* : ${ownerName}\n*➸ Number Bot* : @${me.jid.split('@')[0]}\n*➸ Prefix* : ${prefix}\n*➸ Total Block Contact* : ${blocked.length}\n*➸ The bot is active on* : ${kyun(uptime)}`
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
             case 'admin':
             case 'owner':
             case 'creator':
-                  client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-                  client.sendMessage(from, 'Tuh Nomor Pacarku >_<, Ehh Ownerku mksdnya:v',MessageType.text, { quoted: mek} )
+                  client.sendMessage(from, {displayname: "MR ABHI", vcard: vcard}, MessageType.contact, { quoted: mek})
+                  client.sendMessage(from, 'This is my owner >_<, what do you want from him :v',MessageType.text, { quoted: mek} )
 					break					
 /*
 ]=====> MAKER MENU <=====[
@@ -1729,9 +1732,9 @@ case 'hartatahta':
 if (isBanned) return reply(ind.baned())
 if (!isRegistered) return reply(ind.noregis())
 if (isLimit(sender)) return reply(ind.limitend(pusname))
-if (args.length < 1) return reply(`「❗」Contoh : ${prefix}hartatahta botwea`)
+if (args.length < 1) return reply(`「❗」Example : ${prefix}hartatahta botwa`)
 har = body.slice(12)
-reply('「❗」Hirti Tihti Tai Anjg :v')
+reply('「❗」wait bro fly dumlu okay :v')
 buffer = await getBuffer(`https://api.vhtear.com/hartatahta?text=${har}&apikey=${VhtearKey}`)
 client.sendMessage(from, buffer, image, {quoted: mek})
 await limitAdd(sender)
@@ -1742,7 +1745,7 @@ if (!isRegistered) return reply(ind.noregis())
 if (isLimit(sender)) return reply(ind.limitend(pusname))
 if (args.length < 1) return reply(`「❗」Contoh : ${prefix}cloudtext Ramlan`)
 cloud = body.slice(11)
-reply('「❗」Bentar Bro Terbang dumlu yakan')
+reply('「❗」wait bro fly dumlu okay')
 buffer = await getBuffer(`https://api.xteam.xyz/textpro/cloudtext?text=${cloud}&APIKEY=${XteamKey}`)
 client.sendMessage(from, buffer, image, {quoted: mek})
 await limitAdd(sender)
@@ -1765,7 +1768,7 @@ break
 						reply('')
 					} else {
 						for (let _ of anu) {
-							sendMess(_.jid, `*「 BABY BROADCAST 」*\n\n${body.slice(4)}`)
+							sendMess(_.jid, `*「 LUNA BROADCAST 」*\n\n${body.slice(4)}`)
 						}
 						reply('*「 SUKSES BOSKU 」*')
 					}
@@ -1779,14 +1782,14 @@ break
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						buff = await client.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							client.sendMessage(_.jid, buff, image, {caption: `*「 BC GROUP 」*\n\n➸ Dari Grup : ${groupName}\n➸ Pengirim : wa.me/${(sender.split('@')[0])}\n➸ Pesan : ${body.slice(6)}`})
+							client.sendMessage(_.jid, buff, image, {caption: `*「 BC GROUP 」*\n\n➸ From the Group : ${groupName}\n➸ Sender : wa.me/${(sender.split('@')[0])}\n➸ Message : ${body.slice(6)}`})
 						}
-						reply('*「 SUKSES BOSKU 」*')
+						reply('*「 SUCCESS 」*')
 					} else {
 						for (let _ of anu) {
-							sendMess(_.jid, `*「 BC GROUP 」*\n\n➸ Dari Grup : ${groupName}\n➸ Pengirim : wa.me/${(sender.split('@')[0])}\n➸ Pesan : ${body.slice(6)}`)
+							sendMess(_.jid, `*「 BC GROUP 」*\n\n➸ From the Group : ${groupName}\n➸ Sender : wa.me/${(sender.split('@')[0])}\n➸ Message : ${body.slice(6)}`)
 						}
-						reply('*「 SUKSES BOSKU 」*')
+						reply('*「 SUCCESS 」*')
 					}
 					break
 					case 'setreply':
@@ -1794,14 +1797,14 @@ break
                     client.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
 					cr = body.slice(10)
-					reply(`reply berhasil di ubah menjadi : ${cr}`)
+					reply(`reply has been successfully changed to : ${cr}`)
 					await limitAdd(sender)
 					break
 				case 'setprefix':
 					if (args.length < 1) return
 					if (!isOwner) return reply(ind.ownerb())
 					prefix = args[0]
-					reply(`*「 SUKSES 」* Prefix jadi ➸ : ${prefix}`)
+					reply(`*「 SUCCESS 」* Prefix becomes ➸: $ {prefix}`)
 					break
 				case 'clearall':
 					if (!isOwner) return reply(ind.ownerb())
@@ -1818,7 +1821,7 @@ break
 					if (!isGroup) return reply(ind.groupo())
 					if (!isOwner) return reply(ind.ownerb())
 					client.blockUser (`${body.slice(7)}@c.us`, "add")
-					client.sendMessage(from, `perintah Diterima, memblokir ${body.slice(7)}@c.us`, text)
+					client.sendMessage(from, `perintah Diterima Diterima, memblokirtah Diterima, memblokir ${body.slice(7)}@c.us`, text)
 					break
                     case 'unblock':
 					if (!isGroup) return reply(ind.groupo())
