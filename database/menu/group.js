@@ -1,16 +1,16 @@
 const groupm = (pushname, prefix, botName, ownerName, getLevelingLevel, sender, _registered) => {
 	return `🔰 -----[ *GROUP MENU* ]----- 🔰
 Hallo, ${pushname} 👋
-Semoga harimu Menyenangkan User, ${sender.split("@")[0]}
+Have a nice day for users, ${sender.split("@")[0]}
 ┏━━━━━━━━━━━━━━━━━━━━┓
 ┃╭───────────────────
-┃│➸ NAMA : ${pushname}
+┃│➸ NAME : ${pushname}
 ┃│➸ LEVEL : ${getLevelingLevel(sender)}
 ┃│➸ USER ${botName} : ${_registered.length}
 ┃╰───────────────────
 ┗━━━━━━━━━━━━━━━━━━━━┛
-Berikut adalah fitur yang ada pada bot ini!✨
-Jika tidak paham ketik *${prefix}bingungcok*
+The following are the features of this bot!✨
+If you don't understand, type *${prefix}confused*
 ┏━━━━━━━━━━━━━━━━━━━━┓
 ┃╭───────────────────
 ┃│➸ *${prefix}welcome* ⟪ 1/0 ⟫
@@ -18,7 +18,7 @@ Jika tidak paham ketik *${prefix}bingungcok*
 ┃│➸ *${prefix}event* ⟪ 1/0 ⟫
 ┃│➸ *${prefix}simih* ⟪ 1/0 ⟫
 ┃│➸ *${prefix}nsfw* ⟪ 1/0 ⟫
-┃│➸ *${prefix}grup* ⟪ buka/tutup ⟫
+┃│➸ *${prefix}grup* ⟪ Open/close ⟫
 ┃│➸ *${prefix}add*
 ┃│➸ *${prefix}kick*
 ┃│➸ *${prefix}hedsot*
