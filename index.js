@@ -1821,27 +1821,27 @@ break
 					if (!isGroup) return reply(ind.groupo())
 					if (!isOwner) return reply(ind.ownerb())
 					client.blockUser (`${body.slice(7)}@c.us`, "add")
-					client.sendMessage(from, `perintah Diterima Diterima, memblokirtah Diterima, memblokir ${body.slice(7)}@c.us`, text)
+					client.sendMessage(from, `orders received ${body.slice(7)}@c.us`, text)
 					break
                     case 'unblock':
 					if (!isGroup) return reply(ind.groupo())
 					if (!isOwner) return reply(ind.ownerb())
 				    client.blockUser (`${body.slice(9)}@c.us`, "remove")
-					client.sendMessage(from, `Perintah Diterima, membuka ${body.slice(9)}@c.us`, text)
+					client.sendMessage(from, `orders received${body.slice(9)}@c.us`, text)
 					break   				
 					case 'setppbot':
 					if (!isOwner) return reply(ind.ownerb())
 				    client.updatePresence(from, Presence.composing) 
-					if (!isQuotedImage) return reply(`Kirim gambar dengan caption ${prefix}setbotpp atau tag gambar yang sudah dikirim`)
+					if (!isQuotedImage) return reply(`Send pictures with captions ${prefix}setbotpp atau tag gambar yang sudah dikirim`)
 					enmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await client.downloadAndSaveMediaMessage(enmedia)
 					await client.updateProfilePicture(botNumber, media)
-					reply('Makasih profil barunya bosku😗')
+					reply('Thanks for the new profile, my boss😗')
 					break
 				case 'clone':
 					if (!isGroup) return reply(ind.groupo())
 					if (!isOwner) return reply(ind.ownerg())
-					if (args.length < 1) return reply(' *TAG YANG MAU DI CLONE!!!* ')
+					if (args.length < 1) return reply(' *WANT TAGS ON THE CLONE!!!* ')
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag cvk')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					let { jid, id, notify } = groupMembers.find(x => x.jid === mentioned)
@@ -1849,7 +1849,7 @@ break
 						pp = await client.getProfilePicture(id)
 						buffer = await getBuffer(pp)
 						client.updateProfilePicture(botNumber, buffer)
-						mentions(`Foto profile Berhasil di perbarui menggunakan foto profile @${id.split('@')[0]}`, [jid], true)
+						mentions(`Profile photo successfully updated using profile photo @${id.split('@')[0]}`, [jid], true)
 					} catch (e) {
 						reply(ind.stikga())
 					}
@@ -1860,14 +1860,14 @@ break
 					bnnd = body.slice(6)
 					ban.push(`${bnnd}@s.whatsapp.net`)
 					fs.writeFileSync('./database/user/banned.json', JSON.stringify(ban))
-					reply(`Nomor wa.me/${bnnd} telah dibanned !`)
+					reply(`Number wa.me/${bnnd} has been banned !`)
 					break
 				case 'unban':
 					if (!isOwner) return reply(ind.ownerb())
 					bnnd = body.slice(8)
 					ban.splice(`${bnnd}@s.whatsapp.net`, 1)
 					fs.writeFileSync('./database/user/banned.json', JSON.stringify(ban))
-					reply(`Nomor wa.me/${bnnd} telah di unban!`)
+					reply(`Number wa.me/${bnnd} has been unbanned!`)
 					break
 case 'iri':
 const irimp3 = fs.readFileSync('./assets/iri.mp3');
@@ -1910,16 +1910,16 @@ tujuh = fs.readFileSync('./assets/sound7.mp3');
 client.sendMessage(from, tujuh, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 break														
 /*
-]=====> TQTO <=====[
-> RAMLAN ID
-> REVOER ID
-> ARIS ID
-> NADIA CANS
-> NAZWA
-> VHTEAR
-> TOBZ
-> MHANKBARBAR
-> All Creator Bot WhatsApp
+]=====> THANKS <=====[
+> ABHI SER
+> PUPY
+> THE LAST CREW
+> kochu gang army
+> VERTY
+> OKHI
+> CRIME SER YT
+> KOCHU ANNAN
+> TOXIC BOT GROUP
 */				
 			if (isGroup && !isCmd && isSimi && budy != undefined) {
 						console.log(budy)
