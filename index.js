@@ -831,31 +831,31 @@ switch(command) {
                    if (isLimit(sender)) return reply(ind.limitend(pusname))
                      teks = body.slice(9)
                      anu = await fetchJson(`https://api.vhtear.com/igprofile?query=${teks}&apikey=${VhtearKey}`, {method: 'get'})
-                     reply('「❗」Sabar Lagi Stalking IG nya kak')
+                     reply('「❗」Patience Again, its IG Stalking bro')
                      buffer = await getBuffer(anu.result.picture)
-                     hasil = `YAHAHA HAS BEEN IN MY BOS STALK FOR USERNAME ${teks} \n\n *Username?* : _${anu.result.username}_ \n *Name??* : _${anu.result.full_name}_ \n *Jumlah Follower??﹦?* : _${anu.result.follower}_ \n *Jumlah Following?* : _${anu.result.follow}_ \n *Jumlah Post?* : _${anu.result.post_count}_ \n *Biografi?? :* _${anu.result.biography}`
-                    client.sendMessage(from, buffer, image, {quoted: mek, caption: hasil})
+                     hasil = `YAHAHA HAS BEEN IN MY BOS STALK FOR USERNAME ${teks} \n\n *Username?* : _${anu.result.username}_ \n *Name??* : _${anu.result.full_name}_ \n *Number of Followers??﹦?* : _${anu.result.follower}_ \n *number of Following?* : _${anu.result.follow}_ \n *total Post?* : _${anu.result.post_count}_ \n *Biography?? :* _${anu.result.biography}`
+                    client.sendMessage(from, buffer, image, {quoted: , caption: results})
                     await limitAdd(sender)
 			       break
-				case 'daftar':
+				case 'register':
 				if (isBanned) return reply(ind.baned())
                 if (isRegistered) return  reply(ind.rediregis())
                 if (!q.includes('|')) return  reply(ind.wrongf())
-                const namaUser = q.substring(0, q.indexOf('|') - 0)
-                const umurUser = q.substring(q.lastIndexOf('|') + 1)
+                const username = q.substring(0, q.indexOf('|') - 0)
+                const userage = q.substring(q.lastIndexOf('|') + 1)
                 const serialUser = createSerial(20)
-                if (namaUser.length >= 30) return reply(`Namanya kepanjangan kak :)`)
-                if (umurUser.length >= 3, umurUser.length <= 1) return reply(`Umur min 10 tahun max 40 tahun`)
+                if (username.length >= 30) return reply(`His name stands for :)`)
+                if (userage.length >= 3, userage.length <= 1) return reply(`da mwone ith sheri alla age 10-40`)
                 veri = sender
                 if (isGroup) {
-                    addRegisteredUser(sender, namaUser, umurUser, time, serialUser)
-                    await reply(ind.registered(namaUser, umurUser, serialUser, time, sender))
+                    addRegisteredUser(sender, username, userage, time, serialUser)
+                    await reply(ind.registered(username, userage, serialUser, time, sender))
                     addATM(sender)
                     addLevelingId(sender)
                     console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'), 'in', color(sender || groupName))
                 } else {
-                    addRegisteredUser(sender, namaUser, umurUser, time, serialUser)
-                    await reply(ind.registered(namaUser, umurUser, serialUser, time, sender))
+                    addRegisteredUser(sender, username, userage, time, serialUser)
+                    await reply(ind.registered(username, userage, serialUser, time, sender))
                     addATM(sender)
                     addLevelingId(sender)
                     console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'))
@@ -867,7 +867,7 @@ switch(command) {
 				if (isLimit(sender)) return reply(ind.limitend(pusname))				
 				if (args.length < 1) return reply(ind.wrongf())
 				silk = body.slice(10)
-				if (silk.length > 7) return reply('Teksnya kepanjangan, maksimal 6 karakter')
+				if (silk.length > 7) return reply('The text is long, up to 6 characters')
 				reply(ind.wait())
 				buffer = await getBuffer(`https://api.vhtear.com/silktext?text=${silk}&apikey=${VhtearKey}`)
 		    client.sendMessage(from, buffer, image, {quoted: mek})
@@ -876,36 +876,8 @@ switch(command) {
 /*
 ]=====> GABUTZ MENU <=====[
 */
-				case 'bisakah':
-				if (isBanned) return reply(ind.baned())
-				if (!isRegistered) return reply(ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-					bisakah = body.slice(1)
-					const bisa =['Tentu Saja Bisa! Kamu Adalah Orang Paling Homky','Gak Bisa Ajg Aowkwowk','Hmm Gua Gak Tau Yaa, tanya ama bapakau','Ulangi Tod Gua Ga Paham']
-					const keh = bisa[Math.floor(Math.random() * bisa.length)]
-					client.sendMessage(from, 'Pertanyaan : *'+bisakah+'*\n\nJawaban : '+ keh, text, { quoted: mek })
-					await limitAdd(sender)
-					break
-				case 'kapankah':
-				if (isBanned) return reply(ind.baned())
-				if (!isRegistered) return reply(ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-					kapankah = body.slice(1)
-					const kapan =['Besok','Lusa','Tadi','4 Hari Lagi','5 Hari Lagi','6 Hari Lagi','1 Minggu Lagi','2 Minggu Lagi','3 Minggu Lagi','1 Bulan Lagi','2 Bulan Lagi','3 Bulan Lagi','4 Bulan Lagi','5 Bulan Lagi','6 Bulan Lagi','1 Tahun Lagi','2 Tahun Lagi','3 Tahun Lagi','4 Tahun Lagi','5 Tahun Lagi','6 Tahun Lagi','1 Abad lagi','3 Hari Lagi']
-					const koh = kapan[Math.floor(Math.random() * kapan.length)]
-					client.sendMessage(from, 'Pertanyaan : *'+kapankah+'*\n\nJawaban : '+ koh, text, { quoted: mek })
-					await limitAdd(sender)
-					break
-           case 'apakah':
-           if (isBanned) return reply(ind.baned())
-           if (!isRegistered) return reply(ind.noregis())
-           if (isLimit(sender)) return reply(ind.limitend(pusname))
-					apakah = body.slice(1)
-					const apa =['Iya','Tidak','Bisa Jadi','Ulangi bro gak paham']
-					const kah = apa[Math.floor(Math.random() * apa.length)]
-					client.sendMessage(from, 'Pertanyaan : *'+apakah+'*\n\nJawaban : '+ kah, text, { quoted: mek })
-					await limitAdd(sender)
-					break
+				
+				
 				case 'rate':
 				if (isBanned) return reply(ind.baned())
 				if (!isRegistered) return reply(ind.noregis())
@@ -921,7 +893,7 @@ switch(command) {
            if (!isRegistered) return reply(ind.noregis())
            if (isLimit(sender)) return reply(ind.limitend(pusname))
 					hobby = body.slice(1)
-					const hob =['Desah Di Game','Ngocokin Doi','Stalking sosmed nya mantan','Kau kan gak punya hobby awokawok','Memasak','Membantu Atok','Mabar','Nobar','Sosmedtan','Membantu Orang lain','Nonton Anime','Nonton Drakor','Naik Motor','Nyanyi','Menari','Bertumbuk','Menggambar','Foto fotoan Ga jelas','Maen Game','Berbicara Sendiri']
+					const hob =['Wheezing In Game','vaayinottam','friends ayitt thendi nadakkal','listeing to songs','football','cricket','penpillerde purake nadakkal','freefire','pubg',' Anime','cinemas','riding','family and friends','chugickal','eating and drinking and veruthe nadakkal']
 					const by = hob[Math.floor(Math.random() * hob.length)]
 					client.sendMessage(from, 'Pertanyaan : *'+hobby+'*\n\nJawaban : '+ by, text, { quoted: mek })
 					await limitAdd(sender)
@@ -932,7 +904,7 @@ switch(command) {
            if (isLimit(sender)) return reply(ind.limitend(pusname))
 					gay = body.slice(13)
 		   anu = await fetchJson(`https://arugaz.herokuapp.com/api/howgay`, {method: 'get'})
-		   hasil = `Nih Liat Data Gay Si ${gay}\n\n\nPersentase Gay : ${anu.persen}%\nAlert!!! : ${anu.desc}`
+		   hasil = `Look at the Gay Si Data ${gay}\n\n\nPersentase Gay : ${anu.persen}%\nAlert!!! : ${anu.desc}`
 		   reply(hasil)
 		   await limitAdd(sender)
 					break
@@ -943,7 +915,7 @@ switch(command) {
 					ranp = getRandom('.gif')
 					rano = getRandom('.webp')
 					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/cry?apikey=${TobzKey}`, {method: 'get'})
-					reply('SABAR NGAB')
+					reply('BE PATIENT MWONU')
 					if (anu.error) return reply(anu.error)
 					exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 						fs.unlinkSync(ranp)
@@ -979,7 +951,7 @@ switch(command) {
 					ranp = getRandom('.gif')
 					rano = getRandom('.webp')
 					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/hug?apikey=${TobzKey}`, {method: 'get'})
-					reply('Peyukkkk')
+					reply('ayseri')
 					if (anu.error) return reply(anu.error)
 					exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 						fs.unlinkSync(ranp)
@@ -994,12 +966,13 @@ switch(command) {
                 if (isBanned) return reply(ind.baned())
                 if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
-					const trut =['Pernah suka sama siapa aja? berapa lama?','Kalau boleh atau kalau mau, di gc/luar gc siapa yang akan kamu jadikan sahabat?(boleh beda/sma jenis)','apa ketakutan terbesar kamu?','pernah suka sama orang dan merasa orang itu suka sama kamu juga?','Siapa nama mantan pacar teman mu yang pernah kamu sukai diam diam?','pernah gak nyuri uang nyokap atau bokap? Alesanya?','hal yang bikin seneng pas lu lagi sedih apa','pernah cinta bertepuk sebelah tangan? kalo pernah sama siapa? rasanya gimana brou?','pernah jadi selingkuhan orang?','hal yang paling ditakutin','siapa orang yang paling berpengaruh kepada kehidupanmu','hal membanggakan apa yang kamu dapatkan di tahun ini','siapa orang yang bisa membuatmu sange','siapa orang yang pernah buatmu sange','(bgi yg muslim) pernah ga solat seharian?','Siapa yang paling mendekati tipe pasangan idealmu di sini','suka mabar(main bareng)sama siapa?','pernah nolak orang? alasannya kenapa?','Sebutkan kejadian yang bikin kamu sakit hati yang masih di inget','pencapaian yang udah didapet apa aja ditahun ini?','kebiasaan terburuk lo pas di sekolah apa?']
+					const trut =['what is your dream? english eppidi mwone ?','ettavum ishtam ulla payam eeth','dora or buji eetha mwone ishtam?','sathyam para ni sathyam parayar undo ?','eda mwone guhan or jimitt?','cartoon game or pamb game?','eda mwone abhi ninakk yaara']
+
 					const ttrth = trut[Math.floor(Math.random() * trut.length)]
 					truteh = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
 					client.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ ttrth, quoted: mek })
 					break
-                case 'dare':
+                case 'da':
                 if (isBanned) return reply(ind.baned())
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))                
@@ -1017,7 +990,7 @@ switch(command) {
 				} else if (args[1]=="jam") {var timer = args[0]+"00000"
 				} else {return reply("*pilih:*\ndetik\nmenit\njam")}
 				setTimeout( () => {
-				reply("Waktu habis")
+				reply("Time has run out")
 				}, timer)
 				break						   
 /*
