@@ -1,9 +1,9 @@
 exports.wait = () => {
-	return`*「❗」WAIT GANS*`
+	return`*「❗」WAIT MWONU*`
 }
 
 exports.succes = () => {
-	return`*「 SUKSES 」*`
+	return`*「 SUCCESS 」*`
 }
 
 exports.lvlon = () => {
@@ -27,19 +27,19 @@ exports.noregis = () => {
 }
 
 exports.baned = () => {
-	return`*「❗」SORRY SORRY AJA NIH BRO, TAPI KAU SUDAH KU BANNED YAHAHAHA HAYUUU :V*`
+	return`*「❗」SORRY MWONU, BUT YOU'RE ALREADY BANNED YHAHAHA HAYUUU :V*`
 }
 
 exports.rediregis = () => {
-	return`*「 SUDAH DAFTAR 」*\n\n*kamu sudah terdaftar kak >_<*`
+	return`*「 ALREADY REGISTERED 」*\n\n*you have registered mwone >_<*`
 }
 
 exports.stikga = () => {
-	return`*「 GAGAL 」Coba ulangi lain kali kak*`
+	return`*「 FAILED 」Try again next time bro*`
 }
 
 exports.linkga = () => {
-	return`*「❗」maaf linknya tidak valid kak*`
+	return`*「❗」sorry the link is invalid bruh*`
 }
 
 exports.groupo = () => {
@@ -59,11 +59,11 @@ exports.admin = () => {
 }
 
 exports.badmin = () => {
-	return`*「❗」BOT HARUS JADI ADMIN*`
+	return`*「❗」BOT ADMIN ALLADA KUTTA*`
 }
 
 exports.nsfwoff = () => {
-	return`*「❗」NSFW GAK AKTIF*`
+	return`*「❗」NSFW IN ACTIVE *`
 }
 
 exports.bug = () => {
@@ -71,7 +71,7 @@ exports.bug = () => {
 }
 
 exports.wrongf = () => {
-	return`*「🤔」Teks nya mana kak?*`
+	return`*「🤔」Where's the text, bro?*`
 }
 
 exports.clears = () => {
@@ -82,16 +82,15 @@ exports.pc = () => {
 	return`*「❗」REGISTRASI*\n\nuntuk mengetahui apa kamu sudah terdaftar silahkah check message yang saya kirim \n\nNOTE:\n*jika kamu belum mendapatkan pesan. berarti kamu belum menyimpan nomer bot*`
 }
 
-exports.registered = (namaUser, umurUser, serialUser, time, sender, botName) => {
-	return`*「 REGISTRASI BERHASIL 」*\nUntuk User Info :\n\n*➸ Nama : ${namaUser}*\n*➸ Nomor : wa.me/${sender.split("@")[0]}*\n*➸ Umur : ${umurUser}*\n*➸ Waktu Pendaftaran : ${time}*\n\n*「SN」: ${serialUser}*\n_NOTE : Pesan ini sangat penting :v_`
-}
+exports.registered = (username, userage, serialUser, time, sender, botName) => {
+	return`*「 SUCCESSFUL REGISTRATION 」* \ nFor User Info: \ n \ n * ➸ Name: $ {Username} * \ n * ➸ Number: wa.me/$(sender.split("@")[0]]*\n* ➸ userage: $ {User age} * \ n * ➸ Registration Time: $ {time} * \ n \ n * 「SN」: $ {serialUser} * \ n_NOTE 
 
 exports.cmdnf = (prefix, command) => {
-	return`command *${prefix}${command}* tidak di temukan\coba tulis *${prefix}menu*`
+	return`command *${prefix}${command}* not found \ try to write *${prefix}menu*`
 }
 
 exports.owneresce = (pushname) => {
-	return`*maaf tapi ${pushname} bukan owner script*`
+	return`*sorry but $ {pushname} is not the owner script*`
 }
 exports.levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel) => {
 	return`
@@ -109,7 +108,7 @@ exports.limitend = (pushname) => {
 exports.limitcount = (limitCounts) => {
 	return`
 *「 LIMIT COUNT 」*
-sisa limit anda : ${limitCounts}
+ limit  : ${limitCounts}
 
 Upgrade premium bosku, biar bebas gunain bot`
 }
