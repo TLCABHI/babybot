@@ -44,13 +44,13 @@ const vcard = 'BEGIN:VCARD\n'
             + 'FN:RAMLAN ID\n' 
 // JAN NGEYEL AJG
             + 'ORG:OWNER BOTZ;\n'
-            + 'TEL;type=CELL;type=VOICE;waid=6285559240360:+62 855-5924-0360\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=919074329903:+919074329903\n' 
             + 'END:VCARD' 
 prefix = '.'
 blocked = []   
 limitawal = 90000
 memberlimit = 2
-cr = '*𝐁𝐀𝐁𝐘 𝐁𝐎𝐓𝐙 𝐕𝐄𝐑𝐈𝐅𝐈𝐄𝐃*'
+cr = '*LUNA MWOL VERIFIED*'
 
 /*
 ]=====> SETTINGS <=====[
