@@ -84,7 +84,7 @@ exports.pc = () => {
 
 exports.registered = (username, userage, serialUser, time, sender, botName) => {
 	return`*「 SUCCESSFUL REGISTRATION 」* \ nFor User Info: \ n \ n * ➸ Name: $ {Username} * \ n * ➸ Number: wa.me/$(sender.split("@")[0]]*\n* ➸ userage: $ {User age} * \ n * ➸ Registration Time: $ {time} * \ n \ n * 「SN」: $ {serialUser} * \ n_NOTE 
-
+}
 exports.cmdnf = (prefix, command) => {
 	return`command *${prefix}${command}* not found\try to write *${prefix}menu*`
 }
