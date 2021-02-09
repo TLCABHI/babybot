@@ -691,7 +691,7 @@ switch(command) {
 				var gh = body.slice(11)
 				var nin = gh.split("&")[0];
 				var ja = gh.split("&")[1];
-				if (args.length < 1) return reply(`「❗」Contoh : ${prefix}ninjalogo Ramlan & Gans`)
+				if (args.length < 1) return reply(`「❗」Example : ${prefix}ninjalogo ABHI & PUPY`)
 				reply(ind.wait())
 				buffer = await getBuffer(`https://api.xteam.xyz/textpro/ninjalogo?text=${nin}&text2=${ja}&APIKEY=${XteamKey}`)
 				client.sendMessage(from, buffer, image, {quoted: mek})
@@ -704,7 +704,7 @@ switch(command) {
 				if (isLimit(sender)) return reply(ind.limitend(pusname))				
 				if (args.length < 1) return reply(ind.wrongf())
 				ween = body.slice(15)
-				if (ween.length > 10) return reply('Teksnya kepanjangan, maksimal 9 karakter')
+				if (ween.length > 10) return reply('The text is long, up to 9 characters')
 				reply(ind.wait())
 				buffer = await getBuffer(`https://api.xteam.xyz/textpro/helloweenfire?text=${ween}&APIKEY=${XteamKey}`)
 		    client.sendMessage(from, buffer, image, {quoted: mek})
@@ -718,7 +718,7 @@ switch(command) {
 				var gh = body.slice(9)
 				var porn = gh.split("&")[0];
 				var hub = gh.split("&")[1];
-				if (args.length < 1) return reply(`「❗」Contoh : ${prefix}pornhub Ramlan & Hub`)
+				if (args.length < 1) return reply(`「❗」Example : ${prefix}pornhub ABHI & ABHI`)
 				reply(ind.wait())
 				buffer = await getBuffer(`https://api.xteam.xyz/textpro/ph?text=${porn}&text2=${hub}&APIKEY=${XteamKey}`)
 				client.sendMessage(from, buffer, image, {quoted: mek})
@@ -732,7 +732,7 @@ switch(command) {
 					var gh = body.slice(12)
 					var gem = gh.split("&")[0];
 					var bok = gh.split("&")[1];
-					if (args.length < 1) return reply(`[❗] Contoh : ${prefix}gemboktext 11 01 2021 & Ramlan dan Nadia`)
+					if (args.length < 1) return reply(`[❗] Example : ${prefix}padlocktext 11 01 2021 & ABHI ser Abhi`)
 					reply(ind.wait())
 					buffer = await getBuffer(`https://api.vhtear.com/padlock?text1=${gem}&text2=${bok}&apikey=${VhtearKey}`)
 					client.sendMessage(from, buffer, image, {quoted: mek})
@@ -745,8 +745,8 @@ switch(command) {
 					var gh = body.slice(12)
 					var gli = gh.split("&")[0];
 					var tch = gh.split("&")[1];
-					if (args.length < 1) return reply(`[❗] Contoh : ${prefix}glitchtext Ramlan & Gans`)
-					reply(ind.wait())
+					if (args.length < 1) return reply(`[❗] Example : ${prefix}glitchtext ABHI & VETRY`)
+					reply(ind.wait()) 
 					buffer = await getBuffer(`https://api.xteam.xyz/textpro/glitch?text=${gli}&text2=${tch}&APIKEY=${XteamKey}`)
 					client.sendMessage(from, buffer, image, {quoted: mek})
 					await limitAdd(sender)
@@ -755,7 +755,7 @@ switch(command) {
 				if (isBanned) return reply(ind.baned())
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply(`Textnya mana um? Contoh : ${prefix}simi hallo`)
+					if (args.length < 1) return reply(`Where's the text, um? example : ${prefix}simi hallo`)
 					teks = body.slice(5)
 					anu = await fetchJson(`http://vinz.zeks.xyz/api/sim?q=${teks}&apikey=apivinz`)
 					reply(anu.result)
@@ -764,14 +764,14 @@ switch(command) {
 				if (isBanned) return reply(ind.baned())
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
-				if (args.length < 1) return client.sendMessage(from, 'Kode bahasanya mana kak | contoh : ${prefix}tts id ah yamate kudasai', text, {quoted: mek})
+				if (args.length < 1) return client.sendMessage(from, 'language code where is the code bro | example : ${prefix}tts id hi how are you', text, {quoted: mek})
 					const gtts = require('./lib/gtts')(args[0])
-					if (args.length < 2) return client.sendMessage(from, `Teksnya mana kak | contoh : ${prefix}tts id ah yamate kudasai`, text, {quoted: mek})
+					if (args.length < 2) return client.sendMessage(from, `Where's the text? | example : ${prefix}tts id hi how are you mwonu`, text, {quoted: mek})
 					dtt = body.slice(8)
 					ranm = getRandom('.mp3')
 					rano = getRandom('.ogg')
-					dtt.length > 300
-					? reply('Teks nya terlalu panjang kak')
+					dtt.length > 900
+					? reply('text too long')
 					: gtts.save(ranm, dtt, function() {
 						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
 							fs.unlinkSync(ranm)
@@ -787,7 +787,7 @@ switch(command) {
 					if (isBanned) return reply(ind.baned())
 					if (!isRegistered) return reply(ind.noregis())
 				    if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply('yang mau dijadiin text sticker apaan, titit kah?')
+					if (args.length < 1) return reply('what text sticker do you want to make??')
 					ranp = getRandom('.png')
 					rano = getRandom('.webp')
 					teks = body.slice(4).trim()
@@ -805,7 +805,7 @@ switch(command) {
 				if (isBanned) return reply(ind.baned())
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
-				if (!isQuotedSticker) return reply('Reply atau Tag sticker yang mau dijadiin gambar kak >_<')
+				if (!isQuotedSticker) return reply('Reply or tag the sticker that you want to make a picture of bro >_<')
 					reply(ind.wait())
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await client.downloadAndSaveMediaMessage(encmedia)
@@ -814,26 +814,17 @@ switch(command) {
 						fs.unlinkSync(media)
 						if (err) return reply(ind.stikga())
 						buffer = fs.readFileSync(ran)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'nih kak [(^.^)]'})
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'kond poyi chugick [(^.^)]'})
 						fs.unlinkSync(ran)
 					})
 					await limitAdd(sender)
 					break
-                case 'bikinquote':
-                if (isBanned) return reply(ind.baned())
-                if (!isRegistered) return reply(ind.noregis())
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                var gh = body.slice(12)
-					var quote = gh.split("&")[0];
-					var wm = gh.split("&")[1];
-					const pref = `yang mau dijadiin quote apaan, titit?\n\ncontoh : ${prefix}bikinquote aku bukan boneka & Kata Ramlan`
-					if (args.length < 1) return reply(pref)
-					reply(ind.wait())
-					anu = await fetchJson(`https://terhambar.com/aw/qts/?kata=${quote}&author=${wm}&tipe=random`, {method: 'get'})
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, image, {caption: 'Nih kak >_<', quoted: mek})
-					await limitAdd(sender)
-					break
+                
+                
+					
+					
+					
+
                    case 'stalkig':
                    if (isBanned) return reply(ind.baned())
                    if (!isRegistered) return reply(ind.noregis())
@@ -842,7 +833,7 @@ switch(command) {
                      anu = await fetchJson(`https://api.vhtear.com/igprofile?query=${teks}&apikey=${VhtearKey}`, {method: 'get'})
                      reply('「❗」Sabar Lagi Stalking IG nya kak')
                      buffer = await getBuffer(anu.result.picture)
-                     hasil = `YAHAHA TELAH DI STALK BOS KU UNTUK USERNAME ${teks} \n\n *Username?* : _${anu.result.username}_ \n *Nama??* : _${anu.result.full_name}_ \n *Jumlah Follower??﹦?* : _${anu.result.follower}_ \n *Jumlah Following?* : _${anu.result.follow}_ \n *Jumlah Post?* : _${anu.result.post_count}_ \n *Biografi?? :* _${anu.result.biography}`
+                     hasil = `YAHAHA HAS BEEN IN MY BOS STALK FOR USERNAME ${teks} \n\n *Username?* : _${anu.result.username}_ \n *Name??* : _${anu.result.full_name}_ \n *Jumlah Follower??﹦?* : _${anu.result.follower}_ \n *Jumlah Following?* : _${anu.result.follow}_ \n *Jumlah Post?* : _${anu.result.post_count}_ \n *Biografi?? :* _${anu.result.biography}`
                     client.sendMessage(from, buffer, image, {quoted: mek, caption: hasil})
                     await limitAdd(sender)
 			       break
