@@ -85,7 +85,21 @@ exports.pc = () => {
 exports.registered = (username, userage, serialUser, time, sender, botName) => {
 	return`*「 SUCCESSFUL REGISTRATION 」* \ nFor User Info: \ n \ n * ➸ Name: $ {Username} * \ n * ➸ Number: wa.me/$(sender.split("@")[0]]*\n* ➸ userage: $ {User age} * \ n * ➸ Registration Time: $ {time} * \ n \ n * 「SN」: $ {serialUser} * \ n_NOTE 
 }
+exports.cmdnf = (prefix, command) => {
+	return`command *${prefix}${command}* tidak di temukan\coba tulis *${prefix}menu*`
+}
 
+exports.owneresce = (pushname) => {
+	return`*maaf tapi ${pushname} bukan owner script*`
+}
+exports.levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel) => {
+	return`
+*「 SELAMAT 」*
+➸ *Nama* : ${pushname}
+➸ *Nomor* : wa.me/${sender.split("@")[0]}
+➸ *Xp* : ${getLevelingXp(sender)}
+➸ *Level* : ${getLevel} ➸ ${getLevelingLevel(sender)}
+`}
 	
 
 
