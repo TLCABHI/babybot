@@ -90,7 +90,7 @@ exports.registered = (username, userage, serialUser, time, sender, botName) => {
 
 
 exports.owneresce = (pushname) => {
-	return`*sorry but $ {pushname} is not the owner script*`
+	return`*sorry ${pushname} is not owner script*`
 }
 exports.levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel) => {
 	return`
