@@ -91,7 +91,7 @@ exports.registered = (username, userage, serialUser, time, sender, botName) => {
 
 
 	
-
+}
 exports.levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel) => {
 	return`
 *「 SELAMAT 」*
