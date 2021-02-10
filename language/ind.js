@@ -104,4 +104,4 @@ exports.registered = (username, userage, serialUser, time, sender, botName) => {
 	
 
 
-exports.
+
