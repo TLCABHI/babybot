@@ -102,6 +102,32 @@ exports.levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel)
 `}
 	
 
+		
+
+	
+
+	
+
+*「 LIMIT COUNT 」*
+
+sisa limit anda : ${limitCounts}
+
+Upgrade premium bosku, biar bebas gunain bot`
+
+}
+
+exports.satukos = () => {
+
+	return`*Tambah parameter 1/enable atau 0/disable`
+
+}
+
+exports.uangkau = (pushname, sender, uangkau) => {
+
+	return`┏━━━━━━━♡ *ATM* ♡━━━━━━━┓\n┃╭───────────────────\n┃│➸ NAMA : ${pushname}\n┃│➸ NOMOR : ${sender.split("@")[0]}\n┃│➸ UANG : ${uangkau}\n┃╰───────────────────\n┗━━━━━━━━━━━━━━━━━━━━┛`
+
+}
+
 
 
 	
