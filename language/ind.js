@@ -91,32 +91,17 @@ exports.registered = (username, userage, serialUser, time, sender, botName) => {
 
 
 	
-}
-exports.levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel) => {
-	return`
-*「 SELAMAT 」*
-➸ *Nama* : ${pushname}
-➸ *Nomor* : wa.me/${sender.split("@")[0]}
-➸ *Xp* : ${getLevelingXp(sender)}
-➸ *Level* : ${getLevel} ➸ ${getLevelingLevel(sender)}
-`}
+
+
  
-exports.limitend = (pushname) => {
-	return`*maaf ${pushname} limit hari ini habis*\n*limit di reset setiap jam 24:00*`
-}
 
-exports.limitcount = (limitCounts) => {
-	return`
-*「 LIMIT COUNT 」*
- limit  : ${limitCounts}
+	
 
-Upgrade premium bosku, biar bebas gunain bot`
-}
 
-exports.satukos = () => {
-	return`*Tambah parameter 1/enable atau 0/disable`
-}
 
-exports.uangkau = (pushname, sender, uangkau) => {
-	return`┏━━━━━━━♡ *ATM* ♡━━━━━━━┓\n┃╭───────────────────\n┃│➸ NAMA : ${pushname}\n┃│➸ NOMOR : ${sender.split("@")[0]}\n┃│➸ UANG : ${uangkau}\n┃╰───────────────────\n┗━━━━━━━━━━━━━━━━━━━━┛`
-}
+
+
+	
+
+
+exports.
